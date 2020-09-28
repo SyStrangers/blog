@@ -9,6 +9,8 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.mvc.WebContentInterceptor;
 
 import javax.sql.DataSource;
 import java.util.Arrays;
@@ -17,7 +19,7 @@ import java.util.Map;
 
 @Configuration
 @MapperScan("com.stranger.reception.mapper")
-public class DruidConfig {
+public class DruidConfig implements WebMvcConfigurer {
 
 
     @Autowired
