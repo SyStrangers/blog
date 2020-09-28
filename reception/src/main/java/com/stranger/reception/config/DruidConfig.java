@@ -10,13 +10,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.mvc.WebContentInterceptor;
 
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 配置阿里云数据源
+ */
 @Configuration
 @MapperScan("com.stranger.reception.mapper")
 public class DruidConfig implements WebMvcConfigurer {
