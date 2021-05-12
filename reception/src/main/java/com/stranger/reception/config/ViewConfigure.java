@@ -15,7 +15,14 @@ public class ViewConfigure implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/static/**").excludePathPatterns("/");
+        String[] excludePaths = {
+                "/css/**",
+                "/rescoures/**",
+                "/resources/**/**.svg",
+                "/resources/**/**.css",
+                "/resources/**/**.js",
+                "/"};
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns(excludePaths);
     }
 
     /**
